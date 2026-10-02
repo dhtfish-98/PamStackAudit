@@ -72,7 +72,11 @@ def run(analyze):
     parser.add_argument("snapshot", type=Path)
     args = parser.parse_args()
     try:
-        descriptor = os.open(args.snapshot, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+        nofollow = getattr(os, 'O_NOFOLLOW', None)
+        nonblock = getattr(os, 'O_NONBLOCK', None)
+        if type(nofollow) is not int or nofollow <= 0 or type(nonblock) is not int or nonblock <= 0:
+            raise InputError('safe file CLI requires O_NOFOLLOW and O_NONBLOCK support')
+        descriptor = os.open(args.snapshot, os.O_RDONLY | nofollow | nonblock)
         with os.fdopen(descriptor, "rb") as stream:
             before = os.fstat(stream.fileno())
             if not stat.S_ISREG(before.st_mode):

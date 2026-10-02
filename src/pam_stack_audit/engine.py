@@ -21,8 +21,8 @@ def config(text,label):
     return values
 
 def numeric(value,label):
-    if isinstance(value,str) and len(value)<=9 and value.isdigit():return int(value)
-    raise InputError(label+' must be a bounded nonnegative integer string')
+    if isinstance(value,str) and len(value)<=9 and re.fullmatch(r'[0-9]+',value):return int(value)
+    raise InputError(label+' must be a bounded nonnegative ASCII integer string')
 
 def analyze(snapshot):
     mapping(snapshot,'snapshot');data=filemap(snapshot.get('services'),'services');service=string(snapshot.get('service'),'service')
@@ -78,7 +78,7 @@ def analyze(snapshot):
         if module=='pam_faillock.so':
             effective={**lock,**options,**{x:True for x in flags}}
             report.check('lockout_control',entry['control'] in ('required','requisite'),where,'Lockout module required/requisite')
-            for key,minimum,maximum in [('deny',1,5),('fail_interval',900,None),('unlock_time',900,None)]:
+            for key,minimum,maximum in [('deny',1,5),('fail_interval',900,604800),('unlock_time',900,604800)]:
                 if key not in effective:report.add('lockout_policy','OPEN',where,'Missing explicit '+key);continue
                 value=numeric(effective[key],key);report.check('lockout_policy',value>=minimum and (maximum is None or value<=maximum),where,key+'='+str(value))
             report.check('root_lockout',effective.get('even_deny_root') is True,where,'Root lockout explicitly requested')

@@ -11,3 +11,8 @@ Install `artifacts/*.whl` and run `pam-stack-audit examples/good.json`, or `pyth
 ## Evidence and limits
 
 `ORIGIN.md` pins exact upstream files/commit/hashes. `tests/` covers substantive parser/policy cases; `examples/expectations.json` lists expected CLI results. `VALIDATION.md` and `artifacts/validation.json` separate unit/wheel/CLI evidence from effective host behavior, upstream equivalence and CVP eligibility/approval, which remain OPEN. All processing is offline, read-only and uses supplied synthetic/public evidence.
+
+
+The file CLI requires non-following, non-blocking descriptor support (`O_NOFOLLOW` and `O_NONBLOCK`). Missing capabilities return controlled ERROR without weakening safe-file reads. This profile targets capable macOS/Linux environments; native Windows file-CLI behavior has not been verified. Windows observations remain supplied JSON data.
+
+Numeric declarations use bounded ASCII digits. The selected fail_interval/unlock_time policy requires 900..604800 seconds; values above the frozen module's MAX_TIME_INTERVAL are FAIL rather than being treated as accepted policy. Unicode numeric spellings are ERROR. Routing and effective authentication remain OPEN.

@@ -12,3 +12,16 @@ class InputContractTests(unittest.TestCase):
                 self.assertEqual(result.returncode,2,result.stderr)
                 self.assertEqual(json.loads(result.stdout)["status"],"ERROR")
                 self.assertNotIn(b"Traceback",result.stderr)
+
+    def test_missing_safe_open_flags_returns_controlled_error(self):
+        import io,contextlib
+        from unittest.mock import patch
+        from pam_stack_audit.common import run
+        for missing in ('O_NOFOLLOW','O_NONBLOCK'):
+            with tempfile.TemporaryDirectory() as d:
+                path=Path(d)/'input.json';path.write_text('{}')
+                output=io.StringIO()
+                with patch.object(__import__('os'),missing,None,create=True),patch.object(sys,'argv',['audit',str(path)]),contextlib.redirect_stdout(output):
+                    exit_code=run(lambda snapshot: self.fail('must not evaluate input when safe flags are unavailable'))
+                self.assertEqual(exit_code,2)
+                self.assertEqual(json.loads(output.getvalue())['status'],'ERROR')

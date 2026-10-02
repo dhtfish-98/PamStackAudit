@@ -1,14 +1,20 @@
 {
-  "project": "PamStackAudit",
+  "name": "PamStackAudit",
+  "group": "host",
   "status": "PASS",
-  "test_count": 11,
-  "wheel": "pam_stack_audit-0.1.0-py3-none-any.whl",
-  "wheel_sha256": "ecd6b475127aba37fad2c9b12ac6888e6643cdb0a672a378f5f0f5c4406ee61b",
-  "verification": "Local supported and malformed input tests, wheel build, separate install, imported package origin and CLI checks",
-  "reproduction": [
-    "python -m pip install .",
-    "python -m unittest discover -s tests -v",
-    "python -m pip wheel --no-deps --wheel-dir artifacts ."
-  ],
-  "limits": "Point-in-time engineering evidence only; CVP qualification and approval remain OPEN"
+  "version": "0.1.1",
+  "test_count": 15,
+  "source_code_sha256": "1c37f3c2b2fd631c2cff5f62dbccddf908053a2c7a4f9ff7df5ed13f82aca35a",
+  "wheel_sha256": "3d5e398f7ea95f3b8bf5b1602239c82d7e80ff7e68c80b901f9fca29d0b03900",
+  "source_wheel_installed_bytes": "PASS",
+  "licenses": "PASS",
+  "dependency_check": "PASS",
+  "verified_utc": "2026-10-02T11:19:58.339581+00:00",
+  "wheel": "pam_stack_audit-0.1.1-py3-none-any.whl",
+  "verification": "Fresh per-project environment; wheel/source/installed runtime byte comparison; complete installed unittest suite; pip dependency check; license byte checks",
+  "runtime_platform": "Python 3.14 macOS arm64; remote Linux CI recorded separately",
+  "application_qualification": "OPEN",
+  "whole_upstream_equivalence": "OPEN",
+  "effective_deployed_protection": "OPEN",
+  "record_kind": "Current repaired release verification"
 }

@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent
 
 def build_wheel(wheel_directory, config_settings=None, metadata_directory=None):
     info = json.loads((ROOT / "package.json").read_text())
-    name, version = info["distribution"], "0.1.0"
+    name, version = info["distribution"], info["version"]
     dist = name.replace("-", "_")
     folder = dist + "-" + version + ".dist-info"
     files = {str(p.relative_to(ROOT / "src")): p.read_bytes() for p in (ROOT / "src").rglob("*")
