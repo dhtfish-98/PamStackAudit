@@ -1,5 +1,9 @@
 # PamStackAudit
 
+Version **0.1.2**.
+
+New implementation author: **dhtfish98**. Copyright (c) 2026 dhtfish98 applies to the new implementation code. Upstream policy data, original notices and source references retain their original attribution.
+
 PAM stack and lockout policy snapshot audit. Complete independent **new scope**, not the whole upstream system rewritten.
 
 Input: `{"service":"login","services":{"login":"PAM text","common-auth":"PAM text"},"faillock_conf":"...","pwhistory_conf":"..."}`. Entire supplied include/substack graph is inspected with cycle/depth/10000-expansion limits; mandatory/optional/bracketed control distinctions remain visible. Checks include null passwords, legacy password hash declarations, permissive auth modules, required faillock preauth/authfail stages, explicit deny/fail_interval/unlock_time values, root coverage and password history. Module options override supplied config. Unknown modules, missing files, jump/short-circuit controls, distribution includes and stack-flow effectiveness are OPEN. Even a complete clean example exits 3: presence of required lockout stages does not establish actual failure/success routing. No PAM modules are loaded, users authenticated or settings changed.

@@ -4,5 +4,6 @@
   "command": "pam-stack-audit",
   "license": "MIT",
   "description": "PAM stack and lockout policy snapshot audit",
-  "version": "0.1.1"
+  "version": "0.1.2",
+  "author": "dhtfish98"
 }

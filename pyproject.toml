@@ -5,7 +5,8 @@ backend-path = ["."]
 
 [project]
 name = "pam-stack-audit"
-version = "0.1.1"
+version = "0.1.2"
+authors = [{name = "dhtfish98"}]
 requires-python = ">=3.10"
 description = "PAM stack and lockout policy snapshot audit"
 license = {text = "MIT"}

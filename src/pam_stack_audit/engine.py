@@ -1,3 +1,5 @@
+# Author: dhtfish98
+# Copyright (c) 2026 dhtfish98
 """Review supplied PAM stack structure and lockout/history declarations."""
 import posixpath
 import re

@@ -1,3 +1,5 @@
+# Author: dhtfish98
+# Copyright (c) 2026 dhtfish98
 import unittest,json,tempfile,subprocess,sys
 from pathlib import Path
 PACKAGE="pam_stack_audit"

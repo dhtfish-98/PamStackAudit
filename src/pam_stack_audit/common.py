@@ -1,3 +1,5 @@
+# Author: dhtfish98
+# Copyright (c) 2026 dhtfish98
 """Bounded read-only snapshot I/O; no system collection or mutation."""
 import argparse
 import hashlib

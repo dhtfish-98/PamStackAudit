@@ -1,3 +1,5 @@
+# Author: dhtfish98
+# Copyright (c) 2026 dhtfish98
 """Dependency-free PEP 517 wheel builder for this pure Python project."""
 import base64
 import csv
@@ -16,10 +18,10 @@ def build_wheel(wheel_directory, config_settings=None, metadata_directory=None):
     files = {str(p.relative_to(ROOT / "src")): p.read_bytes() for p in (ROOT / "src").rglob("*")
              if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc"}
     files[folder + "/METADATA"] = ("Metadata-Version: 2.1\nName: " + name + "\nVersion: " + version +
-        "\nRequires-Python: >=3.10\nLicense: " + info["license"] + "\n\n" + info["description"] + "\n").encode()
+        "\nAuthor: " + info["author"] + "\nRequires-Python: >=3.10\nLicense: " + info["license"] + "\n\n" + info["description"] + "\n").encode()
     files[folder + "/WHEEL"] = b"Wheel-Version: 1.0\nGenerator: cvp-host-stdlib-backend\nRoot-Is-Purelib: true\nTag: py3-none-any\n"
     files[folder + "/entry_points.txt"] = ("[console_scripts]\n" + info["command"] + " = " + info["package"] + ".cli:main\n").encode()
-    for filename in ["LICENSE", "NOTICE", "ORIGIN.md"]:
+    for filename in ["LICENSE", "NOTICE", "ORIGIN.md", "COPYRIGHT.md"]:
         if (ROOT / filename).exists():
             files[folder + "/" + filename] = (ROOT / filename).read_bytes()
     output = io.StringIO(); writer = csv.writer(output, lineterminator="\n")

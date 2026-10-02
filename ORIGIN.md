@@ -1,5 +1,7 @@
 # Origin and boundaries
 
+New implementation author: **dhtfish98**. Copyright (c) 2026 dhtfish98 applies to the new implementation code. Upstream policy data, original notices and source references retain their original attribution.
+
 This is an independent, source-informed, complete **new-scope** defensive tool. It is not a claim to rewrite all of the upstream project or to be behaviorally equivalent to it. Offline configuration evidence does not prove effective runtime protection, authorization, CVP eligibility, or approval.
 
 Upstream references are frozen below. Only policy data explicitly named in NOTICE is bundled; other upstream implementation code and documentation are not copied into the wheel. Source license labels describe references; the new implementation license is MIT.
