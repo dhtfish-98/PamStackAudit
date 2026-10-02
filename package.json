@@ -1,0 +1,7 @@
+{
+  "distribution": "pam-stack-audit",
+  "package": "pam_stack_audit",
+  "command": "pam-stack-audit",
+  "license": "MIT",
+  "description": "PAM stack and lockout policy snapshot audit"
+}

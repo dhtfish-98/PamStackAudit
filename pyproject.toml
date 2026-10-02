@@ -1,0 +1,14 @@
+[build-system]
+requires = []
+build-backend = "backend"
+backend-path = ["."]
+
+[project]
+name = "pam-stack-audit"
+version = "0.1.0"
+requires-python = ">=3.10"
+description = "PAM stack and lockout policy snapshot audit"
+license = {text = "MIT"}
+
+[project.scripts]
+pam-stack-audit = "pam_stack_audit.cli:main"

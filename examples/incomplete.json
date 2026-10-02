@@ -1,0 +1,6 @@
+{
+  "service": "x",
+  "services": {
+    "x": "auth required future.so"
+  }
+}

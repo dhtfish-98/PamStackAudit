@@ -1,0 +1,7 @@
+{
+  "service": "login",
+  "services": {
+    "login": "auth required pam_faillock.so preauth\nauth required pam_unix.so\nauth required pam_faillock.so authfail\npassword required pam_pwhistory.so remember=5 enforce_for_root\npassword required pam_unix.so yescrypt\nauth required pam_unix.so nullok"
+  },
+  "faillock_conf": "deny=5\nfail_interval=900\nunlock_time=900\neven_deny_root"
+}
