@@ -1,0 +1,35 @@
+{
+  "schema": "project-build-layout.v1",
+  "project": "PamStackAudit",
+  "author": "dhtfish98",
+  "kind": "python-wheel",
+  "base_public_commit": "6e9aef19909bddec10e4831d0be90dae820b5a1f",
+  "restored_inputs": [
+    {
+      "original": "COPYRIGHT.md",
+      "stored": "项目文档/COPYRIGHT.md",
+      "sha256": "0989a74acaf06c56e82a734d27342f0bdf47258b708e88f57de464d95c094502"
+    },
+    {
+      "original": "LICENSE",
+      "stored": "项目文档/LICENSE",
+      "sha256": "de926d6c22d9e061af6158b0f23146ce036bfb2a562f2f406acec2dc4bd8b298"
+    },
+    {
+      "original": "ORIGIN.md",
+      "stored": "项目文档/ORIGIN.md",
+      "sha256": "579b9b4169fa2de1d1b586f0435a71c2ef335925f19b6545b11025ebe6442882"
+    },
+    {
+      "original": "README.md",
+      "stored": "项目文档/README.md",
+      "sha256": "c973f8897a1dc2e24dd13ea9c374ff85c5152254ca001916b3ad881b027cbad6"
+    },
+    {
+      "original": "VALIDATION.md",
+      "stored": "项目文档/VALIDATION.md",
+      "sha256": "fac9044649412e2efbaf70b0fb6e8b7faa9fa5883deea45c9994a2a1ce772dd2"
+    }
+  ],
+  "platform_entries": []
+}

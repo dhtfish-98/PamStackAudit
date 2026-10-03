@@ -22,8 +22,8 @@ def build_wheel(wheel_directory, config_settings=None, metadata_directory=None):
     files[folder + "/WHEEL"] = b"Wheel-Version: 1.0\nGenerator: cvp-host-stdlib-backend\nRoot-Is-Purelib: true\nTag: py3-none-any\n"
     files[folder + "/entry_points.txt"] = ("[console_scripts]\n" + info["command"] + " = " + info["package"] + ".cli:main\n").encode()
     for filename in ["LICENSE", "NOTICE", "ORIGIN.md", "COPYRIGHT.md"]:
-        if (ROOT / filename).exists():
-            files[folder + "/" + filename] = (ROOT / filename).read_bytes()
+        if (ROOT / "项目文档" / filename).exists():
+            files[folder + "/" + filename] = (ROOT / "项目文档" / filename).read_bytes()
     output = io.StringIO(); writer = csv.writer(output, lineterminator="\n")
     for key, data in sorted(files.items()):
         digest = base64.urlsafe_b64encode(hashlib.sha256(data).digest()).rstrip(b"=").decode()
